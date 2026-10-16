@@ -1,0 +1,39 @@
+/* Quiet velvet folds and chevron trim, with solid surfaces behind filenames. */
+.thunar .sidebar, .thunar .sidebar .view,
+#whiskermenu-window, #whiskermenu-window treeview,
+#whiskermenu-window > frame > stack > box > box:first-child {
+    background-color: #180d12;
+    background-image: url("assets/lodge-curtain.svg");
+    background-repeat: repeat;
+    color: #eee1c8;
+}
+.thunar .sidebar .view:selected, .thunar .sidebar .view:selected:focus,
+#whiskermenu-window treeview:selected,
+#whiskermenu-window treeview:hover {
+    background-image: none;
+    background-color: #6e2537;
+    color: #fff0d5;
+}
+.thunar statusbar {
+    background-color: #170c11;
+    background-image: url("assets/lodge-chevron.svg");
+    background-repeat: repeat-x;
+    background-position: bottom;
+    padding-bottom: 12px;
+    color: #e5d2bb;
+}
+.thunar toolbar {
+    border-bottom: 1px solid #703645;
+    background-color: #211219;
+}
+#whiskermenu-window > frame {
+    border: 1px solid #8d4c5b;
+    border-radius: 0;
+}
+#whiskermenu-button {
+    background-color: #2e1420;
+    border-top-color: #bd7c87;
+    color: #fff0d5;
+}
+menu, .menu { border-radius: 0; background-color: #1c1016; }
+menuitem:hover { background-color: #6e2537; color: #fff0d5; }

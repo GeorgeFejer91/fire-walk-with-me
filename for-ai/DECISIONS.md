@@ -4,3 +4,5 @@
 - 2026-10-16: Publish a public repository under GeorgeFejer91, as explicitly selected by the user.
 - 2026-10-16: Use an original synthesized startup cue; do not package Twin Peaks recordings or reproduce its melody.
 - 2026-10-16: Use the user-supplied Owl Cave symbol for Start and retain the owl as a secondary identity mark.
+- 2026-10-16: Use XFCE image-background alignment for panel continuity across external plugin windows. Keep icon geometry fixed across hover and active states.
+- 2026-10-16: Package separate XFWM and panel texture scales, selected at login. Preserve display scaling and all power/stability settings.

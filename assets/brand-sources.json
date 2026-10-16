@@ -1,0 +1,15 @@
+{
+  "chatgpt": {
+    "bundle": "https://cdn.openai.com/brand/OpenAI-Logos-2025.zip",
+    "member": "OpenAI-logos(new)/SVGs/OpenAI-white-monoblossom.svg",
+    "sha256": "b94ea61d860fae6f82f43571f36f17111fcf5d348e8e9cc22ae4b441c7560011"
+  },
+  "papirus": {
+    "source": "https://github.com/PapirusDevelopmentTeam/papirus-icon-theme",
+    "license": "GPL-3.0",
+    "local_roots": [
+      "/usr/share/icons/Papirus/64x64/apps",
+      "/usr/share/icons/Papirus/48x48/apps"
+    ]
+  }
+}

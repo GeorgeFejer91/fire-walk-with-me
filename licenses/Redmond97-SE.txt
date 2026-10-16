@@ -1,0 +1,5 @@
+Derived from Redmond97 SE Jet Red HiDPI by Sliver X, based on Redmond97 by matthewmx86.
+Source snapshot: https://github.com/belarix/xfce-Dark-theme-
+Commit: 64ae2e79687a9d95a675e25c5ccb56e576b8137a
+Upstream: https://codeberg.org/Sliver_X/Redmond97-SE
+Original LICENSE is included. Palette and local overrides by Codex for this user.

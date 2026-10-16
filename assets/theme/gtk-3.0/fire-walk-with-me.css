@@ -1,0 +1,157 @@
+/* Patterns belong to the chrome; content surfaces stay quiet and legible. */
+@define-color lodge_green #a5c58b;
+@define-color lodge_umber #38251e;
+
+window#XfcePanelWindow, .xfce4-panel {
+  background-color: #17090f;
+  background-image: url("assets/panel-surface.svg");
+  background-repeat: repeat-x;
+  background-size: 80px 44px;
+  background-position: left top;
+  background-origin: border-box;
+  border: 0;
+  box-shadow: none;
+  color: #eee4cf;
+  padding: 0;
+}
+.xfce4-panel > box { padding: 0; }
+window#XfcePanelWindow button, .xfce4-panel button,
+window#XfcePanelWindow .horizontal button {
+  background-image: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-image: none;
+  border-radius: 0;
+  box-shadow: none;
+  margin: 7px 2px 3px;
+  padding: 1px 4px;
+  color: #eee4cf;
+}
+window#XfcePanelWindow button:hover, .xfce4-panel button:hover {
+  background-color: #3e1725;
+  border-color: #b0bc92;
+}
+window#XfcePanelWindow button:checked,
+window#XfcePanelWindow button:active,
+.xfce4-panel button:checked {
+  background-image: none;
+  background-color: #47212c;
+  border-color: #a5c58b;
+  box-shadow: none;
+}
+#whiskermenu-button label, #clock-button label,
+.xfce4-panel #clock-button label {
+  font-family: "URW Gothic", "Noto Sans", sans-serif;
+  font-weight: bold;
+  color: #b2cf94;
+  text-shadow: 1px 1px #302019;
+}
+#whiskermenu-button { padding: 0 8px; }
+#whiskermenu-button image { margin: 0 3px; }
+#clock-button { padding-left: 8px; padding-right: 8px; }
+#docklike-plugin.horizontal {
+  border: 0; border-image: none; box-shadow: none;
+  padding: 7px 3px 3px;
+}
+#docklike-plugin .group {
+  background: transparent; border: 1px solid transparent; border-image: none;
+  box-shadow: none; border-radius: 0; margin: 0 2px; padding: 1px 5px;
+}
+#docklike-plugin .group:hover { background-color: #3e1725; border-color: #8c756c; }
+#docklike-plugin .active_group {
+  background: rgba(60, 22, 37, .65); border: 1px solid #a5c58b;
+  box-shadow: none;
+}
+#docklike-plugin image { margin: 0; padding: 0; }
+#whiskermenu-button box, #whiskermenu-button image, #whiskermenu-button label {
+  margin-top: 0; margin-bottom: 0;
+}
+#whiskermenu-button:checked image, #whiskermenu-button:checked label {
+  margin-left: 3px; margin-right: 3px;
+}
+#XfcePanelWindowWrapper {
+  background-color: #17090f;
+  background-image: url("assets/panel-surface.svg");
+  background-size: 80px 44px; background-repeat: repeat-x;
+  background-position: left top; background-origin: border-box;
+  border: 0; box-shadow: none; margin: 0; padding: 0;
+}
+.xfce4-panel separator { background: transparent; }
+
+#whiskermenu-window, #whiskermenu-window treeview,
+#whiskermenu-window scrolledwindow {
+  background-image: none;
+  background-color: #140d11;
+  color: #eee4cf;
+}
+#whiskermenu-window > frame {
+  border: 1px solid #b9aa97;
+  border-radius: 0;
+}
+#whiskermenu-window .title-area {
+  background-image: url("assets/lodge-curtain.svg");
+  background-repeat: repeat;
+  background-color: #210e17;
+  border-bottom: 1px solid #8a7069;
+  padding: 8px 5px;
+}
+#whiskermenu-window .title-area label {
+  font-family: "URW Gothic", "Noto Sans", sans-serif;
+  font-weight: bold;
+  color: #b2cf94;
+  text-shadow: 1px 1px #38251e;
+}
+#whiskermenu-window treeview:selected,
+#whiskermenu-window treeview:hover {
+  background-image: none;
+  background-color: #562331;
+  color: #fff1db;
+}
+#whiskermenu-window entry {
+  background-image: none;
+  background-color: #08080a;
+  color: #b2cf94;
+  border: 1px solid #815963;
+  margin: 4px;
+}
+.thunar .sidebar, .thunar .sidebar .view {
+  background-color: #1a0d14;
+  background-image: url("assets/lodge-curtain.svg");
+  background-repeat: repeat;
+  color: #e8decc;
+}
+.thunar .sidebar .view:selected,
+.thunar .sidebar .view:selected:focus {
+  background-image: none;
+  background-color: #572633;
+  color: #fff1db;
+}
+.thunar toolbar {
+  background-image: none;
+  background-color: #201218;
+  border-bottom: 1px solid #865962;
+}
+.thunar statusbar {
+  background-color: #170d12;
+  background-image: url("assets/chevron-rail.svg");
+  background-repeat: repeat-x;
+  background-position: bottom;
+  padding-bottom: 7px;
+  color: #e5d9c3;
+}
+/* Thunar multiplies inactive selected icons by this state color. */
+.thunar .standard-view .view:selected,
+.thunar .standard-view .view:selected:focus { background-color: rgba(129, 44, 55, .45); }
+.thunar .standard-view .view:active,
+.thunar .standard-view .view:active:backdrop { background-color: rgba(129, 44, 55, .2); }
+headerbar .title, .titlebar .title {
+  font-family: "URW Gothic", "Noto Sans", sans-serif;
+  font-weight: bold;
+  color: #b2cf94;
+  text-shadow: 1px 1px #38251e;
+}
+menu, .menu { background-color: #180e14; border-radius: 0; }
+menuitem:hover { background-color: #562331; color: #fff1db; }
+XfdesktopIconView.view, XfdesktopIconView.view:backdrop {
+  background: transparent; color: #eee4cf; text-shadow: 1px 2px #070608;
+}
