@@ -1,0 +1,11 @@
+# Project
+
+Fire Walk With Me is an unofficial, Twin Peaks-inspired native XFCE desktop skin for Linux users.
+It combines velvet, chevron flooring, green opening-title lettering, familiar application logos, and an original startup cue.
+
+Deliverables: GTK2/3/4 and XFWM themes, SVG icons, native cursors, wallpaper, optional original audio, user/system installers, rollback, and reviewed screenshots.
+
+Preserve file-manager behavior and established keyboard shortcuts. Do not patch application binaries or the machine firmware.
+No show footage, recording, proprietary font, account data, or personal backup is part of the product.
+
+Initial verified platform: MX Linux, XFCE 4.20, X11, 2560×1600, 2× scaling. Other platforms remain unverified until tested.
