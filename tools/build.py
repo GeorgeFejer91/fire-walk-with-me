@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Build native XFCE assets from the shipped sources and local brand artwork."""
 import argparse
+import base64
 import hashlib
 import io
 import json
@@ -14,6 +15,7 @@ import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT/'.build/share'
+# Stable install IDs keep existing selections and rollback journals working.
 NAME = 'Fire-Walk-With-Me'
 NS = '{http://www.w3.org/2000/svg}'
 ET.register_namespace('', 'http://www.w3.org/2000/svg')
@@ -89,7 +91,7 @@ def build(fetch_chatgpt=False):
         text+='\nactive_text_shadow_color=#38251e\ntitle_shadow_active=true\n'
         p.write_text(text)
     for p in (theme/'xfwm4').glob('*.xpm'):half_xpm(p)
-    for directory,label in [(theme,'Fire Walk With Me'),(hidpi,'Fire Walk With Me HiDPI')]:
+    for directory,label in [(theme,'Firefox Walk With Me'),(hidpi,'Firefox Walk With Me HiDPI')]:
         (directory/'index.theme').write_text(f'[Desktop Entry]\nName={label}\nType=X-GNOME-Metatheme\n\n[X-GNOME-Metatheme]\nGtkTheme={NAME}\nIconTheme={NAME}\n')
         shutil.copy2(ROOT/'LICENSE',directory/'LICENSE')
 
@@ -99,11 +101,15 @@ def build(fetch_chatgpt=False):
     symbol=ET.parse(ROOT/'assets/identity/owl-cave.svg').getroot()
     symbol.set('width','64');symbol.set('height','64');symbol.set('viewBox','0 -7 96 78')
     (motifs/'owl-cave.svg').write_text(ET.tostring(symbol,encoding='unicode'))
+    payload=base64.b64encode((ROOT/'assets/identity/fox-lodge.png').read_bytes()).decode('ascii')
+    fox=svg(f'<image width="64" height="64" href="data:image/png;base64,{payload}"/>')
+    (motifs/'fox-lodge.svg').write_text(fox)
     aliases=json.loads((ROOT/'assets/icons/aliases.json').read_text())
     originals=aliases['apps']['owl'].split()
     starts=[x for x in originals if x in ['start-here','xfce4-whiskermenu','org.xfce.panel.whiskermenu','distributor-logo','distributor-logo-windows','mx-logo']]
     aliases['apps']['owl']=' '.join(x for x in originals if x not in starts)
     aliases['apps']['owl-cave']=' '.join(starts)+' fire-walk-with-me'
+    aliases['apps']['fox-lodge']='firefox-walk-with-me'
     metadata=json.loads((ROOT/'assets/brand-sources.json').read_text())
     cache=ROOT/'.build/cache/chatgpt-logo.svg'
     if fetch_chatgpt and not cache.exists():
@@ -143,7 +149,7 @@ def build(fetch_chatgpt=False):
                     path=directory/(name+suffix+'.svg');path.unlink(missing_ok=True)
                     path.symlink_to('../motifs/'+motif+'.svg');count+=1
     directories=['scalable/motifs',*['scalable/'+c for c in aliases]]
-    index=f'[Icon Theme]\nName=Fire Walk With Me\nComment=Velvet, chevrons, and recognizable application silhouettes\nInherits=Papirus-Dark,Adwaita,hicolor\nDirectories={",".join(directories)}\n'
+    index=f'[Icon Theme]\nName=Firefox Walk With Me\nComment=Velvet, chevrons, and recognizable application silhouettes\nInherits=Papirus-Dark,Adwaita,hicolor\nDirectories={",".join(directories)}\n'
     for directory in directories:
         context=directory.split('/')[1]
         context={'mimetypes':'MimeTypes'}.get(context,context.title())
@@ -163,7 +169,7 @@ def build(fetch_chatgpt=False):
         config=work/(source.stem+'.conf');config.write_text(''.join(spec))
         subprocess.run(['xcursorgen',str(config),str(cursor/'cursors'/source.stem)],check=True)
         for name in alternate[source.stem].split():(cursor/'cursors'/name).symlink_to(source.stem)
-    (cursor/'index.theme').write_text('[Icon Theme]\nName=Fire Walk With Me Cursors\nInherits=DMZ-White\n')
+    (cursor/'index.theme').write_text('[Icon Theme]\nName=Firefox Walk With Me Cursors\nInherits=DMZ-White\n')
     data=OUT/'fire-walk-with-me';data.mkdir()
     shutil.copytree(ROOT/'assets/wallpapers',data/'wallpapers')
     shutil.copytree(ROOT/'assets/identity',data/'identity')
@@ -177,7 +183,9 @@ def build(fetch_chatgpt=False):
         target=data/'identity'/('panel-surface'+('-2x' if scale==2 else '')+'.png')
         subprocess.run(['rsvg-convert','-w',str(80*scale),'-h',str(44*scale),str(panel),'-o',str(target)],check=True)
     title=data/'identity/title.svg'
-    title.write_text('<svg xmlns="http://www.w3.org/2000/svg" width="385" height="58" viewBox="0 0 385 58"><text x="380" y="39" text-anchor="end" font-family="URW Gothic,DejaVu Sans,sans-serif" font-size="29" font-weight="bold" fill="#443126" stroke="#66bd60" stroke-width="1.8" paint-order="stroke fill">FIRE WALK WITH ME</text></svg>')
+    mark=ET.fromstring(fox)
+    mark.set('x','0');mark.set('y','0');mark.set('width','64');mark.set('height','64')
+    title.write_text('<svg xmlns="http://www.w3.org/2000/svg" width="385" height="64" viewBox="0 0 385 64">'+ET.tostring(mark,encoding='unicode')+'<text x="380" y="39" text-anchor="end" font-family="URW Gothic,DejaVu Sans,sans-serif" font-size="23" font-weight="bold" fill="#443126" stroke="#66bd60" stroke-width="1.5" paint-order="stroke fill">FIREFOX WALK WITH ME</text></svg>')
     subprocess.run(['rsvg-convert',str(title),'-o',str(title.with_suffix('.png'))],check=True)
     for p in OUT.rglob('*.svg'):ET.parse(p)
     assert all(p.exists() for p in OUT.rglob('*') if p.is_symlink())

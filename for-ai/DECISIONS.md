@@ -6,3 +6,4 @@
 - 2026-10-16: Use the user-supplied Owl Cave symbol for Start and retain the owl as a secondary identity mark.
 - 2026-10-16: Use XFCE image-background alignment for panel continuity across external plugin windows. Keep icon geometry fixed across hover and active states.
 - 2026-10-16: Package separate XFWM and panel texture scales, selected at login. Preserve display scaling and all power/stability settings.
+- 2026-10-17: Rename the skin Firefox Walk With Me. Use a painterly fox with velvet curtains, firs and the Lodge floor; favor organic shapes and texture. Keep the Owl Cave Start symbol, recognizable Firefox app icon, native installation IDs and rollback locations.

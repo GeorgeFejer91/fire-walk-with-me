@@ -29,3 +29,7 @@
 - Checked inactive file selection and dialog legibility as separate states.
 
 Public screenshots combine a reviewed live desktop/panel capture with native test-session captures containing generic content. The full private capture history and rollback backups are intentionally excluded. Re-run `tools/preview.py` after visual changes; do not claim universal visual perfection from a finite review.
+
+## Branding update — 17 October 2026
+
+VERIFIED: Firefox Walk With Me naming, painterly transparent fox artwork, self-contained icon wrapper and desktop wordmark. The new mark loads through Gtk.IconTheme at 16/24/48/96 pixels, with a distinct target from the Owl Cave Start icon. Both 1× and 2× native preview sessions were captured again. Source PNG alpha spans 0–255 and is preserved. Existing installation IDs and rollback journals are reused. Live power settings remain 0 on AC and battery.

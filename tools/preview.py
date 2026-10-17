@@ -32,7 +32,7 @@ def capture(scale, output):
     for name in directories:(home/name).mkdir()
     keys={'Downloads':'DOWNLOAD','Public':'PUBLICSHARE'}
     (config/'user-dirs.dirs').write_text(''.join(f'XDG_{keys.get(name,name.upper())}_DIR="$HOME/{name}"\n' for name in directories))
-    (home/'Documents/Field Notes.txt').write_text('FIRE WALK WITH ME\n\nNative XFCE desktop skin.\nVelvet, chevrons, and green opening-title lettering.\n')
+    (home/'Documents/Field Notes.txt').write_text('FIREFOX WALK WITH ME\n\nNative XFCE desktop skin.\nVelvet, chevrons, and green opening-title lettering.\n')
     shutil.copy2(ROOT/'assets/identity/owl-cave.svg',home/'Pictures/Owl Cave.svg')
     path=config/'xfce4/panel/docklike-2.rc';path.parent.mkdir(parents=True,exist_ok=True)
     path.write_text('[user]\npinned=firefox;thunar;xfce4-terminal;\nindicatorStyle=2\nindicatorColor=rgb(165,197,139)\n')
@@ -72,7 +72,7 @@ def capture(scale, output):
         run('xdotool','key','ctrl+shift+n');time.sleep(.4);shot('dialog');run('xdotool','key','Escape')
         run('wmctrl','-ic',wid)
         demo=home/'terminal-demo.py'
-        demo.write_text("import time\nprint('FIRE WALK WITH ME\\n')\nprint('SYSTEM ONLINE   /   THE LODGE IS OPEN\\n')\nprint('Native windows. Familiar controls. Something in the woods.\\n')\nprint('  [OK] velvet / chevron panel')\nprint('  [OK] Owl Cave start mark')\nprint('  [OK] original synth login cue')\nprint('\\nReady.\\n')\ntime.sleep(120)\n")
+        demo.write_text("import time\nprint('FIREFOX WALK WITH ME\\n')\nprint('SYSTEM ONLINE   /   THE LODGE IS OPEN\\n')\nprint('Native windows. Familiar controls. Something in the woods.\\n')\nprint('  [OK] velvet / chevron panel')\nprint('  [OK] Owl Cave start mark')\nprint('  [OK] original synth login cue')\nprint('\\nReady.\\n')\ntime.sleep(120)\n")
         processes.append(subprocess.Popen(['xfce4-terminal','--disable-server','--title=Red Room Terminal','--geometry=90x24','--command=python3 '+str(demo)],stdout=log,stderr=log));time.sleep(.8);shot('terminal')
         print('Native screenshots complete.',flush=True)
     finally:

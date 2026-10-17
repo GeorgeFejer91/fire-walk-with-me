@@ -29,7 +29,7 @@ assert not errors,errors
     gi.require_version('Gtk','3.0')
     from gi.repository import Gtk
     theme=Gtk.IconTheme.new();theme.prepend_search_path(str(SHARE/'icons'));theme.set_custom_theme('Fire-Walk-With-Me')
-    aliases=['fire-walk-with-me','start-here','avatar-default','folder','folder-documents','folder-pictures','folder-downloads','folder-music','folder-videos','text-plain','utilities-terminal','firefox','google-chrome']
+    aliases=['firefox-walk-with-me','fire-walk-with-me','start-here','avatar-default','folder','folder-documents','folder-pictures','folder-downloads','folder-music','folder-videos','text-plain','utilities-terminal','firefox','google-chrome']
     if (SHARE/'icons/Fire-Walk-With-Me/scalable/apps/codex-desktop.svg').exists():aliases.append('codex-desktop')
     # Test available composites; a build without the optional official mark inherits it.
     for name in aliases:
@@ -39,6 +39,7 @@ assert not errors,errors
             pixbuf=info.load_icon();assert pixbuf.get_width()>0,(name,size)
     filenames=[theme.lookup_icon(name,48,0).get_filename() for name in ['folder-documents','folder-pictures','folder-downloads','folder-music','folder-videos']]
     assert len({str(Path(p).resolve()) for p in filenames})==5
+    assert Path(theme.lookup_icon('firefox-walk-with-me',48,0).get_filename()).resolve()!=Path(theme.lookup_icon('start-here',48,0).get_filename()).resolve()
     class Cursor(ctypes.Structure):
         _fields_=[('version',ctypes.c_uint),('size',ctypes.c_uint),('width',ctypes.c_uint),('height',ctypes.c_uint),('xhot',ctypes.c_uint),('yhot',ctypes.c_uint),('delay',ctypes.c_uint),('pixels',ctypes.POINTER(ctypes.c_uint))]
     lib=ctypes.CDLL('libXcursor.so.1')

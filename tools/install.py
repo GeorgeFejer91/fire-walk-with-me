@@ -159,7 +159,7 @@ def setup_files(changes, config, data, startup):
     changes.text(config/'autostart/black-lodge-titles.desktop', desktop('Black Lodge Window Names',f'/usr/bin/python3 "{data}/runtime/session.py"'))
     if shutil.which('conky'):
         changes.text(config/'conky/Fire-Walk-With-Me.conf',(ROOT/'profiles/conky.conf').read_text().replace('@DATA@',str(data)))
-        changes.text(config/'autostart/conky.desktop',desktop('Fire Walk With Me Clock',f'conky -c "{config}/conky/Fire-Walk-With-Me.conf"'))
+        changes.text(config/'autostart/conky.desktop',desktop('Firefox Walk With Me Clock',f'conky -c "{config}/conky/Fire-Walk-With-Me.conf"'))
     if startup:
         changes.text(config/'autostart/fire-walk-with-me-sound.desktop',desktop('Into the Lodge',f'paplay --volume=36000 "{data}/audio/into-the-lodge.wav"','Original synthesized desktop-login cue'))
     path=config/'xfce4/terminal/terminalrc';changes.text(path,terminal(path))
@@ -281,7 +281,7 @@ def install_system(changes, startup):
     changes.text(shared_conky,(ROOT/'profiles/conky.conf').read_text().replace('@DATA@',str(data)))
     for directory in [Path('/etc/xdg/autostart'),Path('/etc/skel/.config/autostart')]:
         changes.text(directory/'black-lodge-titles.desktop',desktop('Black Lodge Window Names',f'/usr/bin/python3 "{data}/runtime/session.py"'))
-        if shutil.which('conky'):changes.text(directory/'conky.desktop',desktop('Fire Walk With Me Clock',f'conky -c "{shared_conky}"'))
+        if shutil.which('conky'):changes.text(directory/'conky.desktop',desktop('Firefox Walk With Me Clock',f'conky -c "{shared_conky}"'))
         if startup:changes.text(directory/'fire-walk-with-me-sound.desktop',desktop('Into the Lodge',f'paplay --volume=36000 "{data}/audio/into-the-lodge.wav"'))
     for version in ['gtk-3.0','gtk-4.0']:
         path=Path('/etc')/version/'settings.ini'
@@ -335,6 +335,6 @@ def main():
                     for child in source.iterdir():changes.copy(child,share/source.name/child.name)
                 else:changes.copy(source,share/source.name)
         apply_user(changes,share,args.startup_sound)
-    print('Fire Walk With Me installed. Private rollback:',changes.journal)
+    print('Firefox Walk With Me installed. Private rollback:',changes.journal)
 
 if __name__=='__main__':main()

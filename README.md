@@ -1,8 +1,12 @@
-# Fire Walk With Me
+# Firefox Walk With Me
 
 An unofficial Twin Peaks-inspired XFCE skin: red velvet, black/ivory chevrons, green opening-title lettering, and familiar native controls.
 
-![Fire Walk With Me desktop](docs/screenshots/desktop.jpg)
+![Firefox Walk With Me — the fox in the Lodge](assets/identity/fox-lodge.png)
+
+An illustrated fox lies half-awake in red velvet, with misty Douglas firs beyond the curtains and the Black Lodge floor beneath its tail. The mark uses a worn, hand-painted look.
+
+![Firefox Walk With Me desktop](docs/screenshots/desktop.jpg)
 
 - One continuous velvet taskbar, an Owl Cave Start mark, and stable hover/active borders.
 - Native GTK2/3/4 styles and XFWM decorations, including a HiDPI variant.
@@ -49,6 +53,8 @@ The last command applies the system assets to your current desktop. Existing pan
 System installation writes named assets under `/usr/share`, defaults under `/etc/xdg`, `/etc/gtk-*` and `/etc/skel`, launcher overrides under `/usr/local/share/applications`, and LightDM's existing GTK greeter appearance settings when present. It does not restart the display manager.
 
 The sound plays after desktop login. It does not replace a firmware chime. No reboot, power setting, bootloader or audio driver change is part of installation.
+
+The project was previously named Fire Walk With Me. Installation IDs, data directories and rollback locations retain their original names so existing installations can update in place. The Firefox browser keeps its own application identity; this skin is unaffiliated with Mozilla.
 
 ## Restore
 
