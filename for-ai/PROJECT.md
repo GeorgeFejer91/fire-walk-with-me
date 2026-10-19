@@ -5,6 +5,8 @@ It combines velvet, chevron flooring, green opening-title lettering, familiar ap
 
 Deliverables: GTK2/3/4 and XFWM themes, SVG icons, native cursors, wallpaper, optional original audio, user/system installers, rollback, and reviewed screenshots.
 
+The static GitHub Pages site is `index.html` / `site.css`, published from the root of `main` with `.nojekyll`. It presents the approved original PNG, a true path-based SVG companion and reviewed synthetic screenshots. No web framework or external font service is needed.
+
 Preserve file-manager behavior and established keyboard shortcuts. Do not patch application binaries or the machine firmware.
 No show footage, recording, proprietary font, account data, or personal backup is part of the product.
 

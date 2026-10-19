@@ -4,9 +4,17 @@ The skin's emblem is a half-awake fox in front of red velvet curtains, with Doug
 
 ![The fox in the Lodge](../assets/identity/fox-lodge.png)
 
-The original transparent PNG is preserved. The build embeds it into a self-contained scalable icon wrapper and the green/brown desktop wordmark. The Owl Cave Start icon and recognizable Firefox browser icon remain separate identities.
+The original transparent PNG is preserved and used as the main illustration on the [project page](https://georgefejer91.github.io/firefox-walk-with-me/). The native build embeds it into a self-contained icon wrapper and the green/brown desktop wordmark. That wrapper contains a bitmap; the separate vector edition below contains actual paths. The Owl Cave Start icon and recognizable Firefox browser icon remain separate identities.
 
 Generated with the built-in imagegen tool on 17 October 2026. `transparent_background` was true. No reference image was supplied.
+
+## Vector edition
+
+[fox-lodge.svg](../assets/identity/fox-lodge.svg) translates the approved illustration into 1,907 colored spline paths on a transparent 1254 × 1254 viewBox. It preserves the irregular fox silhouette, velvet folds, green eye, firs and chevron floor. Fine painted texture is simplified into color shapes. There are no embedded bitmaps, fonts, scripts or external dependencies in the SVG.
+
+Reproduce it with the optional, MIT-licensed [VTracer 0.6.15](https://pypi.org/project/vtracer/0.6.15/) artwork tool, installed in an isolated Python environment, then run `python3 tools/vectorize_logo.py`. This is an authoring dependency only; it is not downloaded by the skin installer or website. Pillow converts alpha to a binary mask at 128 before tracing, preventing faint edge pixels from becoming opaque flecks. The script records the exact spline, color and speckle settings and adds an accessible title, description and viewBox.
+
+The website previews both editions and offers direct SVG/PNG downloads. The native desktop keeps the approved painterly rendering.
 
 ## Exact generation prompt
 

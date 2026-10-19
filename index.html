@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#160d10">
+  <meta name="description" content="An unofficial Twin Peaks-inspired XFCE desktop skin. Red velvet, black-and-ivory chevrons, green title lettering and familiar native controls.">
+  <meta property="og:title" content="Firefox Walk With Me">
+  <meta property="og:description" content="A familiar desktop, somewhere inside the Black Lodge. An unofficial XFCE skin for Linux.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://georgefejer91.github.io/firefox-walk-with-me/">
+  <meta property="og:image" content="https://georgefejer91.github.io/firefox-walk-with-me/docs/screenshots/desktop.jpg">
+  <link rel="canonical" href="https://georgefejer91.github.io/firefox-walk-with-me/">
+  <link rel="icon" href="assets/identity/owl-cave.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="site.css">
+  <title>Firefox Walk With Me — an XFCE skin</title>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="masthead wrap">
+    <a class="home" href="./" aria-label="Firefox Walk With Me home"><img src="assets/identity/owl-cave.svg" width="48" height="32" alt="">Firefox Walk With Me</a>
+    <nav aria-label="Main navigation">
+      <a href="#desktop">Desktop</a>
+      <a href="#install">Install</a>
+      <a href="https://github.com/GeorgeFejer91/firefox-walk-with-me">GitHub ↗</a>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="introduction wrap" aria-labelledby="title">
+      <div class="intro-copy">
+        <h1 id="title">Firefox<br>Walk With Me</h1>
+        <p class="lead">A familiar desktop, somewhere inside the Black Lodge.</p>
+        <p>An unofficial Twin Peaks-inspired skin for XFCE. Heavy red velvet, a black-and-ivory floor, forest-green lettering. Windows and controls you already know.</p>
+        <div class="actions">
+          <a class="button" href="https://github.com/GeorgeFejer91/firefox-walk-with-me/releases/latest">Download the skin</a>
+          <a href="#artwork">Get the SVG artwork ↓</a>
+        </div>
+        <p class="platform">For Linux with XFCE · Tested on MX Linux, XFCE 4.20 / X11</p>
+      </div>
+      <img class="fox" src="assets/identity/fox-lodge.png" width="1254" height="1254" alt="A half-awake red fox curled beneath red velvet curtains, with dark firs and a chevron floor." fetchpriority="high">
+    </section>
+    <div class="floor" aria-hidden="true"></div>
+    <section class="wrap section" id="desktop" aria-labelledby="desktop-title">
+      <h2 id="desktop-title">The Lodge, on your desktop.</h2>
+      <p class="section-intro">Native windows, menus, folders and a single continuous velvet taskbar. The atmosphere carries through the interface.</p>
+      <figure class="desktop-shot">
+        <a href="docs/screenshots/desktop.jpg" aria-label="View the full desktop screenshot"><img src="docs/screenshots/desktop.jpg" width="2560" height="1600" alt="The XFCE desktop: red curtains, a chevron floor, green project lettering and a bottom taskbar with recognizable application icons." loading="lazy"></a>
+        <figcaption>The native XFCE desktop at 2× scaling. All published screenshots use generic demonstration content.</figcaption>
+      </figure>
+      <div class="screen-pair">
+        <figure>
+          <a href="docs/screenshots/files.jpg" aria-label="View the full Black Lodge file-manager screenshot"><img src="docs/screenshots/files.jpg" width="2560" height="1600" alt="Black Lodge file manager with dark red title bars, beveled controls and distinct icons for pictures, documents, music and downloads." loading="lazy"></a>
+          <figcaption><strong>Black Lodge.</strong> Thunar keeps its familiar navigation and shortcuts, with distinct special-folder icons.</figcaption>
+        </figure>
+        <figure>
+          <a href="docs/screenshots/terminal.jpg" aria-label="View the full Red Room Terminal screenshot"><img src="docs/screenshots/terminal.jpg" width="2560" height="1600" alt="Red Room Terminal with green monospace text inside the dark red native window frame." loading="lazy"></a>
+          <figcaption><strong>Red Room Terminal.</strong> Green phosphor lettering, quiet borders and the same native window controls.</figcaption>
+        </figure>
+      </div>
+      <p class="more"><a href="docs/screenshots/start-menu.jpg">Start menu</a> · <a href="docs/screenshots/dialog.jpg">Settings dialog</a> · <a href="https://github.com/GeorgeFejer91/firefox-walk-with-me/blob/main/docs/verification.md">Verification and known limits</a></p>
+    </section>
+    <section class="installation section" id="install" aria-labelledby="install-title">
+      <div class="wrap install-columns">
+        <div>
+          <h2 id="install-title">Enter the Lodge.</h2>
+          <p>Start with an existing XFCE desktop. The installer supports your account or system defaults, including new accounts. Both have a restore command.</p>
+          <p>GTK2/3/4 themes, XFWM window borders, cursors, wallpaper and folder icons are included. Application marks stay recognizable.</p>
+          <p>The optional login sound, <em>Into the Lodge</em>, is an original deep-bass synth cue. It contains no music or samples from the show.</p>
+        </div>
+        <div class="install-commands">
+          <p>Install the <a href="https://github.com/GeorgeFejer91/firefox-walk-with-me#install">listed dependencies</a>, then:</p>
+          <pre><code>git clone https://github.com/GeorgeFejer91/firefox-walk-with-me.git
+cd firefox-walk-with-me
+./install.sh</code></pre>
+          <p>Restore your previous settings:</p>
+          <pre><code>./install.sh --restore</code></pre>
+          <a href="https://github.com/GeorgeFejer91/firefox-walk-with-me#install">Full installation and system-default instructions ↗</a>
+        </div>
+      </div>
+    </section>
+    <section class="wrap section artwork" id="artwork" aria-labelledby="artwork-title">
+      <img src="assets/identity/fox-lodge.svg" width="1254" height="1254" alt="The vector edition of the fox emblem, preserving its organic curves, velvet folds and forest shapes." loading="lazy">
+      <div>
+        <h2 id="artwork-title">The fox in the Lodge.</h2>
+        <p>The approved painterly emblem is used at the top of this page. This companion SVG translates it into 1,907 editable paths, preserving the fox, curtains, trees and floor.</p>
+        <p>Both editions have a transparent background. The SVG contains real vector shapes and no embedded bitmap.</p>
+        <div class="actions">
+          <a class="button" href="assets/identity/fox-lodge.svg" download>Download SVG</a>
+          <a href="assets/identity/fox-lodge.png" download>Original PNG</a>
+        </div>
+        <p><a href="https://github.com/GeorgeFejer91/firefox-walk-with-me/blob/main/docs/branding.md">Artwork provenance and reproduction notes ↗</a></p>
+      </div>
+    </section>
+  </main>
+  <div class="floor" aria-hidden="true"></div>
+  <footer class="wrap">
+    <p>Firefox Walk With Me · An unofficial fan project by <a href="https://github.com/GeorgeFejer91">GeorgeFejer91</a>.</p>
+    <p>Unaffiliated with Twin Peaks, its creators or Mozilla. Firefox is a Mozilla trademark. Original fox artwork is AI-generated. <a href="https://github.com/GeorgeFejer91/firefox-walk-with-me/blob/main/docs/credits.md">Credits</a> · <a href="https://github.com/GeorgeFejer91/firefox-walk-with-me/blob/main/LICENSE">GPL-3.0</a></p>
+  </footer>
+</body>
+</html>

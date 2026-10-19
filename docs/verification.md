@@ -33,3 +33,17 @@ Public screenshots combine a reviewed live desktop/panel capture with native tes
 ## Branding update — 17 October 2026
 
 VERIFIED: Firefox Walk With Me naming, painterly transparent fox artwork, self-contained icon wrapper and desktop wordmark. The new mark loads through Gtk.IconTheme at 16/24/48/96 pixels, with a distinct target from the Owl Cave Start icon. Both 1× and 2× native preview sessions were captured again. Source PNG alpha spans 0–255 and is preserved. Existing installation IDs and rollback journals are reused. Live power settings remain 0 on AC and battery.
+
+## Website and vector edition — 19 October 2026
+
+| Check | Result | Evidence / limit |
+| --- | --- | --- |
+| True vector emblem | VERIFIED | 1,907 spline paths, 1254 × 1254 viewBox, accessible title/description, no embedded bitmap or external resource. Native librsvg render retains transparent corners and an opaque subject. The original PNG is unchanged. |
+| Vector appearance | VERIFIED | Rendered and compared with the approved PNG. Organic silhouette, curtains, firs, green eye and chevron floor remain; fine painted texture becomes solid color shapes. Binary alpha preprocessing removes faint edge flecks. |
+| Local web links | VERIFIED | Local assets and anchor targets resolve; SVG and PNG download links point to the shipped artwork. |
+| Browser rendering | VERIFIED | Isolated Chrome 155 at 1440 × 1000, 768 × 1024, 390 × 844 and 320 × 740. All images decode, no horizontal page overflow, no JavaScript exceptions or failed resource requests. Primary controls have at least 40px height. |
+| Screenshot review | VERIFIED | Desktop and phone screenshots inspected. Increased green-title contrast and moved the fox higher on phones. Native desktop, file-manager and terminal images are existing reviewed captures with generic content. |
+| Native regression checks | VERIFIED | Rebuilt the skin; GTK3/4 parsing, representative icon/cursor loading, audio-file checks and all three installer/rollback tests pass. No installation or system-setting change was needed for this update. |
+| Other web browsers / screen readers | NOT RUN | Native semantics, alt text, visible keyboard focus and a skip link are provided; independent browser and assistive-technology qualification remains open. |
+
+The website is static HTML/CSS, with no analytics, cookies, external fonts or application JavaScript. Browser QA used an isolated temporary Chrome profile; no private application screenshots are published.

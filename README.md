@@ -2,6 +2,8 @@
 
 An unofficial Twin Peaks-inspired XFCE skin: red velvet, black/ivory chevrons, green opening-title lettering, and familiar native controls.
 
+[Live project page](https://georgefejer91.github.io/firefox-walk-with-me/) · [Download a release](https://github.com/GeorgeFejer91/firefox-walk-with-me/releases/latest) · [Vector emblem (SVG)](assets/identity/fox-lodge.svg) · [Original artwork (PNG)](assets/identity/fox-lodge.png)
+
 ![Firefox Walk With Me — the fox in the Lodge](assets/identity/fox-lodge.png)
 
 An illustrated fox lies half-awake in red velvet, with misty Douglas firs beyond the curtains and the Black Lodge floor beneath its tail. The mark uses a worn, hand-painted look.
@@ -28,8 +30,8 @@ sudo apt install python3-dbus python3-gi gir1.2-gtk-3.0 gir1.2-wnck-3.0 \
   librsvg2-bin x11-apps papirus-icon-theme fonts-urw-base35 conky-all \
   xfce4-whiskermenu-plugin xfce4-docklike-plugin xfce4-pulseaudio-plugin \
   xfce4-power-manager-plugins pulseaudio-utils
-git clone https://github.com/GeorgeFejer91/fire-walk-with-me.git
-cd fire-walk-with-me
+git clone https://github.com/GeorgeFejer91/firefox-walk-with-me.git
+cd firefox-walk-with-me
 ```
 
 Install for your account and apply to the running desktop:
@@ -84,3 +86,9 @@ Verification additionally uses `gir1.2-gtk-4.0`. Screenshot capture uses `xvfb`,
 ![Green terminal](docs/screenshots/terminal.jpg)
 
 Apps with custom-drawn interfaces, libadwaita styling or their own tray images may retain their own appearance. GTK2 rendering and the live LightDM greeter are not fully visually qualified. GPL-3.0; see [LICENSE](LICENSE) and the third-party [credits](docs/credits.md).
+
+## Website and artwork
+
+The live page is a static GitHub Pages site published from `main` at the repository root. It uses the approved painterly PNG and reviewed native screenshots. Preview it with `python3 -m http.server 8765 --bind 127.0.0.1`, then open `http://127.0.0.1:8765/`.
+
+The companion SVG contains 1,907 editable vector paths, with no embedded raster. [Artwork provenance and reproduction](docs/branding.md). The site and installer need no vectorization dependency.
